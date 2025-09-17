@@ -1,0 +1,158 @@
+1) bilibili.com/video/BV1db4y1d79C/?spm_id_from=333.1387.homepage.video_card.click # << Best ====
+
+1) https://www.bilibili.com/video/BV1e541137Tc?spm_id_from=333.788.recommend_more_video.-1&vd_source=9a4bc8c6c4b3f65118a7338473c15077
+
+1. 编辑项目根目录下的 .gitignore 文件
+如果项目根目录没有 .gitignore，请创建一个。
+
+# Ignore data folder
+Python/Pandas/data/
+
+3. 提交 .gitignore 的更改：
+bash
+
+
+1
+2
+git add .gitignore
+git commit -m "Ignore Python/Pandas/data folder"
+
+
+profile
+Qwen3-Max-Preview
+1:07 am
+你遇到的问题很典型 👉
+
+你运行 git status，看到：
+
+
+
+1
+2
+3
+4
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore_global
+        Python/Pandas/data/
+这说明：
+
+.gitignore_global 是一个未被跟踪的文件（你可能想让它全局生效，但不小心放在了项目里）。
+Python/Pandas/data/ 是一个未被忽略的文件夹（你想忽略它，但 Git 还是列出来了）。
+✅ 你的目标：
+让 Python/Pandas/data/ 永远不被 Git 跟踪。
+让 .gitignore_global 不出现在 git status 中（因为它不应该属于这个项目）。
+🛠️ 解决方案：
+✅ 第一步：正确忽略 Python/Pandas/data/
+1. 编辑项目根目录下的 .gitignore 文件
+如果项目根目录没有 .gitignore，请创建一个。
+
+添加以下内容：
+
+gitignore
+
+
+1
+2
+# Ignore data folder
+Python/Pandas/data/
+💡 路径是相对于 .gitignore 文件位置的。确保路径拼写和大小写完全正确。 
+
+2. 如果 data/ 文件夹或其中文件曾经被跟踪过（即使现在不在了），需要清除缓存：
+bash
+
+
+1
+git rm -r --cached Python/Pandas/data/
+这条命令会从 Git 索引中移除该文件夹，但保留你本地的文件。 
+
+3. 提交 .gitignore 的更改：
+bash
+
+
+1
+2
+git add .gitignore
+git commit -m "Ignore Python/Pandas/data folder"
+✅ 现在 git status 应该不再显示 Python/Pandas/data/。
+
+✅ 第二步：处理 .gitignore_global
+这个文件不应该出现在你的项目仓库中。它应该是一个全局配置文件，放在你的用户目录下（如 C:\Users\你的用户名\.gitignore_global），并通过 Git 全局配置引用。
+
+1. 从当前项目中删除对它的跟踪（不删除本地文件）：
+bash
+
+
+1
+git rm --cached .gitignore_global
+2. 将它移动到你的用户主目录（推荐）：
+打开文件资源管理器，把 .gitignore_global 文件剪切并粘贴到：
+
+
+
+1
+C:\Users\<你的用户名>\
+例如：C:\Users\Alice\.gitignore_global
+
+3. 设置 Git 全局忽略（只需执行一次）：
+在终端（Git Bash 或 CMD）中运行：
+
+bash
+
+
+1
+git config --global core.excludesfile ~/.gitignore_global
+这条命令告诉 Git：“以后所有项目，都用 ~/.gitignore_global 里的规则来忽略文件”。 
+
+4. 提交你刚刚的删除操作：
+bash
+
+
+1
+2
+git add .gitignore_global  # 这会记录“删除”操作
+git commit -m "Remove .gitignore_global from project (moved to global)"
+✅ 现在 .gitignore_global 不再属于这个项目，而是全局生效。
+
+🧪 最终验证
+在 Python/Pandas/data/ 里新建一个文件，比如 test.txt。
+运行 git status。
+如果 test.txt 没有出现 → 忽略成功！
+.gitignore_global 也不应该再出现。
+📌 总结操作命令：
+bash
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+# 1. 忽略 data 文件夹
+echo "Python/Pandas/data/" >> .gitignore
+git rm -r --cached Python/Pandas/data/
+git add .gitignore
+
+
+
+ 总结操作命令：
+
+# 1. 忽略 data 文件夹
+echo "Python/Pandas/data/" >> .gitignore
+git rm -r --cached Python/Pandas/data/
+git add .gitignore
+git commit -m "Ignore data folder"
+
+# 2. 移除并设置全局 ignore 文件
+git rm --cached .gitignore_global
+# 👉 手动把 .gitignore_global 文件移动到 C:\Users\你的用户名\
+git config --global core.excludesfile ~/.gitignore_global
+git add .gitignore_global  # 提交“删除”记录
+git commit -m "Move .gitignore_global to global config"
