@@ -5,7 +5,7 @@
 1. 编辑项目根目录下的 .gitignore 文件
 如果项目根目录没有 .gitignore，请创建一个。
 
-# Ignore data folder
+## Ignore data folder
 Python/Pandas/data/
 
 3. 提交 .gitignore 的更改：
@@ -54,7 +54,7 @@ gitignore
 
 1
 2
-# Ignore data folder
+## Ignore data folder
 Python/Pandas/data/
 💡 路径是相对于 .gitignore 文件位置的。确保路径拼写和大小写完全正确。 
 
@@ -135,7 +135,7 @@ bash
 10
 11
 12
-# 1. 忽略 data 文件夹
+## 1. 忽略 data 文件夹
 echo "Python/Pandas/data/" >> .gitignore
 git rm -r --cached Python/Pandas/data/
 git add .gitignore
@@ -144,15 +144,15 @@ git add .gitignore
 
  总结操作命令：
 
-# 1. 忽略 data 文件夹
+## 1. 忽略 data 文件夹
 echo "Python/Pandas/data/" >> .gitignore
 git rm -r --cached Python/Pandas/data/
 git add .gitignore
 git commit -m "Ignore data folder"
 
-# 2. 移除并设置全局 ignore 文件
+## 2. 移除并设置全局 ignore 文件
 git rm --cached .gitignore_global
-# 👉 手动把 .gitignore_global 文件移动到 C:\Users\你的用户名\
+## 👉 手动把 .gitignore_global 文件移动到 C:\Users\你的用户名\
 git config --global core.excludesfile ~/.gitignore_global
 git add .gitignore_global  # 提交“删除”记录
 git commit -m "Move .gitignore_global to global config"

@@ -71,10 +71,10 @@ class Expression(ABC):
         pass
     
     def python_function(self,**bindings):
-#         code = "lambda {}:{}".format(
-#             ", ".join(sorted(distinct_variables(self))),
-#             self._python_expr())
-#         print(code)
+##         code = "lambda {}:{}".format(
+##             ", ".join(sorted(distinct_variables(self))),
+##             self._python_expr())
+##         print(code)
         global_vars = {"math":math}
         return eval(self._python_expr(),global_vars,bindings)
 
@@ -229,18 +229,18 @@ class Power(Expression):
         return self.base.evaluate(**bindings) ** self.exponent.evaluate(**bindings)
     def expand(self):
         return self
-#         expanded_exponent = self.exponent.expand()
-#         print (expanded_exponent)
-#         if isinstance(expanded_exponent, Number)\
-#             and (expanded_exponent.number % 1 == 0)\
-#             and (expanded_exponent.number > 0):
-#                 power = int(expanded_exponent.number)
-#                 if power == 1:
-#                     return self.base.expand()
-#                 else:
-#                     return Product(self.base.expand(), Power(self.base,Number(power-1)).expand()).expand()
-#         else:
-#             return Power(self.base.expand, expanded_exponent)
+##         expanded_exponent = self.exponent.expand()
+##         print (expanded_exponent)
+##         if isinstance(expanded_exponent, Number)\
+##             and (expanded_exponent.number % 1 == 0)\
+##             and (expanded_exponent.number > 0):
+##                 power = int(expanded_exponent.number)
+##                 if power == 1:
+##                     return self.base.expand()
+##                 else:
+##                     return Product(self.base.expand(), Power(self.base,Number(power-1)).expand()).expand()
+##         else:
+##             return Power(self.base.expand, expanded_exponent)
     def display(self):
         return "Power({},{})".format(self.base.display(),self.exponent.display())
     def derivative(self,var):
@@ -301,7 +301,7 @@ class Apply(Expression):
         self.argument = argument
     def latex(self):
         return self.function.latex(self.argument.latex())
-#         return "\\operatorname{{ {} }} \\left( {} \\right)".format(self.function.name, self.argument.latex())
+##         return "\\operatorname{{ {} }} \\left( {} \\right)".format(self.function.name, self.argument.latex())
     def evaluate(self, **bindings):
         return _function_bindings[self.function.name](self.argument.evaluate(**bindings))
     def expand(self):
@@ -386,7 +386,7 @@ def contains(exp, var):
     else:
         raise TypeError("Not a valid expression.")
 
-# TODO: equality
-# TODO: evalb
-# TODO: substitution
-# TODO: derivative
+## TODO: equality
+## TODO: evalb
+## TODO: substitution
+## TODO: derivative

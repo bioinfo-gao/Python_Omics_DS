@@ -17,15 +17,15 @@ def intersection(u1,u2,v1,v2):
     return np.linalg.solve(m,c)
 
 ## Will fail if lines are parallel!
-# def do_segments_intersect(s1,s2):
-#     u1,u2 = s1
-#     v1,v2 = s2
-#     l1, l2 = distance(*s1), distance(*s2)
-#     x,y = intersection(u1,u2,v1,v2)
-#     return (distance(u1, (x,y)) <= l1 and
-#             distance(u2, (x,y)) <= l1 and
-#             distance(v1, (x,y)) <= l2 and
-#             distance(v2, (x,y)) <= l2)
+## def do_segments_intersect(s1,s2):
+##     u1,u2 = s1
+##     v1,v2 = s2
+##     l1, l2 = distance(*s1), distance(*s2)
+##     x,y = intersection(u1,u2,v1,v2)
+##     return (distance(u1, (x,y)) <= l1 and
+##             distance(u2, (x,y)) <= l1 and
+##             distance(v1, (x,y)) <= l2 and
+##             distance(v2, (x,y)) <= l2)
 
 def segment_checks(s1,s2):
     u1,u2 = s1
@@ -53,9 +53,9 @@ def do_segments_intersect(s1,s2):
         return False
 
 
-# print(do_segments_intersect(((0,2),(1,-1)),((0,0),(4,0))))
+## print(do_segments_intersect(((0,2),(1,-1)),((0,0),(4,0))))
 
-# a = np.array(((1,0), (0,1)))
-# b = np.array((9,0))
-# x = np.linalg.solve(a, b)
-# print(x)
+## a = np.array(((1,0), (0,1)))
+## b = np.array((9,0))
+## x = np.linalg.solve(a, b)
+## print(x)

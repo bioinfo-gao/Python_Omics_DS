@@ -6,7 +6,7 @@ with urlopen("https://finance.yahoo.com/webservice/v1/symbols/allcurrencies/quot
 
 data = json.loads(source)
 
-# print(json.dumps(data, indent=2))
+## print(json.dumps(data, indent=2))
 
 usd_rates = dict()
 

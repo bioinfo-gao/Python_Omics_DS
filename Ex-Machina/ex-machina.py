@@ -1,4 +1,4 @@
-#BlueBook code decryption
+##BlueBook code decryption
 import sys
 def sieve(n):
     x = [1] * n

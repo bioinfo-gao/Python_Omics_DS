@@ -1,17 +1,17 @@
 from vectors import *
 
 ################################################################
-# Vector transformation functions we'll introduce in Chapter 4 #
-# (also used to render the teapot)                             #
+## Vector transformation functions we'll introduce in Chapter 4 #
+## (also used to render the teapot)                             #
 ################################################################
 
-# def compose(f1,f2):
-#     def new_function(input):
-#         return f1(f2(input))
-#     return new_function
+## def compose(f1,f2):
+##     def new_function(input):
+##         return f1(f2(input))
+##     return new_function
 
-# def compose(f1,f2):
-#     return lambda x: f1(f2(x))
+## def compose(f1,f2):
+##     return lambda x: f1(f2(x))
 
 def compose(*args):
     def new_function(input):

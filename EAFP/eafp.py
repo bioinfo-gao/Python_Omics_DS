@@ -1,4 +1,4 @@
-# Duck Typing and Easier to ask forgiveness than permission (EAFP)
+## Duck Typing and Easier to ask forgiveness than permission (EAFP)
 
 
 class Duck:
@@ -21,28 +21,28 @@ class Person:
 
 def quack_and_fly(thing):
     pass
-    # Not Duck-Typed (Non-Pythonic)
-    # if isinstance(thing, Duck):
-    #     thing.quack()
-    #     thing.fly()
-    # else:
-    #     print('This has to be a Duck!')
+## Not Duck-Typed (Non-Pythonic)
+## if isinstance(thing, Duck):
+##     thing.quack()
+##     thing.fly()
+## else:
+##     print('This has to be a Duck!')
 
-    # LBYL (Non-Pythonic)
-    # if hasattr(thing, 'quack'):
-    #     if callable(thing.quack):
-    #         thing.quack()
+## LBYL (Non-Pythonic)
+## if hasattr(thing, 'quack'):
+##     if callable(thing.quack):
+##         thing.quack()
 
-    # if hasattr(thing, 'fly'):
-    #     if callable(thing.fly):
-    #         thing.fly()
+## if hasattr(thing, 'fly'):
+##     if callable(thing.fly):
+##         thing.fly()
 
-    #     try:
-    #         thing.quack()
-    #         thing.fly()
-    #         thing.bark()
-    #     except AttributeError as e:
-    #         print(e)
+##     try:
+##         thing.quack()
+##         thing.fly()
+##         thing.bark()
+##     except AttributeError as e:
+##         print(e)
 
 d = Duck()
 

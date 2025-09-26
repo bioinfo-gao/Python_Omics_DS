@@ -47,7 +47,7 @@ class Box3D():
     def __init__(self, *vector):
         self.vector = vector
 
-# helper function to extract all the vectors from a list of objects
+## helper function to extract all the vectors from a list of objects
 def extract_vectors_3D(objects):
     for object in objects:
         if type(object) == Polygon3D:

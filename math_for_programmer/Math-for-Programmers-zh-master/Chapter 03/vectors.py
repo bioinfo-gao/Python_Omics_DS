@@ -1,14 +1,14 @@
 from math import sqrt, sin, cos, acos, atan2
 
-# def add(v1,v2):
-#     return (v1[0] + v2[0], v1[1] + v2[1])
+## def add(v1,v2):
+##     return (v1[0] + v2[0], v1[1] + v2[1])
 
 
 
-# def add(*vectors):
-#     by_coordinate = zip(*vectors)
-#     coordinate_sums = [sum(coords) for coords in by_coordinate]
-#     return tuple(coordinate_sums)
+## def add(*vectors):
+##     by_coordinate = zip(*vectors)
+##     coordinate_sums = [sum(coords) for coords in by_coordinate]
+##     return tuple(coordinate_sums)
 
 def add(*vectors):
     return tuple(map(sum,zip(*vectors)))

@@ -31,6 +31,6 @@ class Employee:
 emp_1 = Employee('Corey', 'Schafer', 50000)
 emp_2 = Employee('Test', 'Employee', 60000)
 
-# print(emp_1 + emp_2)
+## print(emp_1 + emp_2)
 
 print(len(emp_1))

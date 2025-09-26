@@ -1,5 +1,6 @@
-# Math-for-Programmers-zh
-中文注释示例代码《程序员数学：用python学好线性代数和微积分》
+## Math-for-Programmers-zh
+
+中文注释示例代码《程序员数学：用 python 学好线性代数和微积分》
 
 原书代码：Source code for the book, Math for Programmers
 

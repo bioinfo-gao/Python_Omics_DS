@@ -1,4 +1,4 @@
-# Import a library of functions called 'pygame'
+## Import a library of functions called 'pygame'
 import pygame
 import vectors
 from math import pi, sqrt, cos, sin, atan2
@@ -6,7 +6,7 @@ from random import randint, uniform
 from linear_solver import do_segments_intersect
 import numpy as np
 
-# DEFINE OBJECTS OF THE GAME
+## DEFINE OBJECTS OF THE GAME
 
 bounce = True
 
@@ -28,33 +28,33 @@ class PolygonModel():
         return [vectors.add((self.x,self.y),v) for v in rotated]
 
 
-# def move(self, milliseconds, thrust_vector=(0,0), gravity_source):
-#     tx, ty = thrust_vector
-#     gx, gy = gravitational_field(src, self.x, self.y)
-#     ax = tx + gx
-#     ay = ty + gy
-#     self.vx += ax * milliseconds/1000
-#     self.vy += ay * milliseconds/1000
-#
-#     dx, dy = self.vx * milliseconds / 1000.0, self.vy * milliseconds / 1000.0
-#     self.x, self.y = vectors.add((self.x,self.y), (dx,dy))
-#
-#     if bounce:
-#         if self.x < -10 or self.x > 10:
-#             self.vx = - self.vx
-#         if self.y < -10 or self.y > 10:
-#             self.vy = - self.vy
-#     else:
-#         if self.x < -10:
-#             self.x += 20
-#         if self.y < -10:
-#             self.y += 20
-#         if self.x > 10:
-#             self.x -= 20
-#         if self.y > 10:
-#             self.y -=20
-#
-#     self.rotation_angle += self.angular_velocity * milliseconds / 1000.0
+## def move(self, milliseconds, thrust_vector=(0,0), gravity_source):
+##     tx, ty = thrust_vector
+##     gx, gy = gravitational_field(src, self.x, self.y)
+##     ax = tx + gx
+##     ay = ty + gy
+##     self.vx += ax * milliseconds/1000
+##     self.vy += ay * milliseconds/1000
+##
+##     dx, dy = self.vx * milliseconds / 1000.0, self.vy * milliseconds / 1000.0
+##     self.x, self.y = vectors.add((self.x,self.y), (dx,dy))
+##
+##     if bounce:
+##         if self.x < -10 or self.x > 10:
+##             self.vx = - self.vx
+##         if self.y < -10 or self.y > 10:
+##             self.vy = - self.vy
+##     else:
+##         if self.x < -10:
+##             self.x += 20
+##         if self.y < -10:
+##             self.y += 20
+##         if self.x > 10:
+##             self.x -= 20
+##         if self.y > 10:
+##             self.y -=20
+##
+##     self.rotation_angle += self.angular_velocity * milliseconds / 1000.0
 
     def move(self, milliseconds, thrust_vector=(0,0), gravity_sources=[]):
         ax, ay = thrust_vector
@@ -128,7 +128,7 @@ class BlackHole(PolygonModel):
                 for i in range(0,20)]
         super().__init__(vs)
         self.gravity = gravity
-# ASTEROID HELPERS
+## ASTEROID HELPERS
 
 def trajectory(start,end,steps):
     xi,yi = start
@@ -145,7 +145,7 @@ def trajectory(start,end,steps):
         ast.draw_center = True
     return asts
 
-# INITIALIZE GAME STATE
+## INITIALIZE GAME STATE
 
 ship = Ship()
 ship.x = 7
@@ -156,14 +156,14 @@ asteroid_count = 10
 default_asteroids = [Asteroid() for _ in range(0,asteroid_count)]
 
 black_hole = BlackHole(0.1)
-# black_hole2 = BlackHole(0.1)
+## black_hole2 = BlackHole(0.1)
 
 black_hole.x, black_hole.y = 0,0
-# black_hole2.x, black_hole2.y = 2, -1
+## black_hole2.x, black_hole2.y = 2, -1
 
 black_holes = [
     black_hole, 
-    # black_hole2
+## black_hole2
 ]
 
 def gravitational_field(sources, x, y):
@@ -175,7 +175,7 @@ for ast in default_asteroids:
     ast.x = randint(-9,9) # 9 * uniform(ast.vy, 0)
     ast.y = randint(-9,9) # 9 * uniform(0, - ast.vx)
 
-# HELPERS / SETTINGS
+## HELPERS / SETTINGS
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -217,7 +217,7 @@ thrust = 3
 trajectory_mode = False
 trajectory_frame = 1000
 
-# INITIALIZE GAME ENGINE
+## INITIALIZE GAME ENGINE
 
 def main(asteroids=default_asteroids):
 
@@ -244,7 +244,7 @@ def main(asteroids=default_asteroids):
             if event.type == pygame.QUIT: # If user clicked close
                 done=True # Flag that we are done so we exit this loop
 
-        # UPDATE THE GAME STATE
+## UPDATE THE GAME STATE
 
         milliseconds = clock.get_time()
         keys = pygame.key.get_pressed()
@@ -258,9 +258,9 @@ def main(asteroids=default_asteroids):
         for ast in asteroids:
             ast.move(milliseconds,(0,0),gravity_sources=black_holes)
 
-        # for bh in black_holes:
-        #     others = [other for other in black_holes if other != bh]
-        #     bh.move(milliseconds, (0,0), others)
+## for bh in black_holes:
+##     others = [other for other in black_holes if other != bh]
+##     bh.move(milliseconds, (0,0), others)
 
         ship_thrust_vector = (0,0)
 
@@ -274,7 +274,7 @@ def main(asteroids=default_asteroids):
 
         laser = ship.laser_segment()
 
-        # DRAW THE SCENE
+## DRAW THE SCENE
 
 
         if not trajectory_mode:

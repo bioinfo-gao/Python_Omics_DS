@@ -12,18 +12,18 @@ y_vals = [0, 1, 3, 2, 3, 5]
 plt.plot(x_vals, y_vals)
 
 
-# index = count()
+## index = count()
 
-# def animate(i):
-#     x_vals.append(next(index))
-#     y_vals.append(random.randint(0, 5))
+## def animate(i):
+##     x_vals.append(next(index))
+##     y_vals.append(random.randint(0, 5))
 
 
 plt.tight_layout()
 plt.show()
 
 
-# data = pd.read_csv('data.csv')
-# x = data['x_value']
-# y1 = data['total_1']
-# y2 = data['total_2']
+## data = pd.read_csv('data.csv')
+## x = data['x_value']
+## y1 = data['total_1']
+## y2 = data['total_2']

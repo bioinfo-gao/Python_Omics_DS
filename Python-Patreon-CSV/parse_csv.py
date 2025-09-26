@@ -6,7 +6,7 @@ names = []
 with open('patrons.csv', 'r') as data_file:
     csv_data = csv.DictReader(data_file)
 
-    # We don't want first line of bad data
+## We don't want first line of bad data
     next(csv_data)
 
     for line in csv_data:

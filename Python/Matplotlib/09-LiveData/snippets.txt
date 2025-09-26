@@ -1,4 +1,4 @@
-# Another way to do it without clearing the Axis
+## Another way to do it without clearing the Axis
 from itertools import count
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1,4 +1,4 @@
-# Import a library of functions called 'pygame'
+## Import a library of functions called 'pygame'
 import pygame
 import vectors
 from math import pi, sqrt, cos, sin, atan2
@@ -7,7 +7,7 @@ from linear_solver import do_segments_intersect
 import numpy as np
 import sys
 
-# DEFINE OBJECTS OF THE GAME
+## DEFINE OBJECTS OF THE GAME
 
 class PolygonModel():
     def __init__(self,points):
@@ -76,7 +76,7 @@ class Asteroid(PolygonModel):
         self.angular_velocity = uniform(-pi/2,pi/2)
 
 
-# ASTEROID HELPERS
+## ASTEROID HELPERS
 
 def trajectory(start,end,steps):
     xi,yi = start
@@ -93,7 +93,7 @@ def trajectory(start,end,steps):
         ast.draw_center = True
     return asts
 
-# INITIALIZE GAME STATE
+## INITIALIZE GAME STATE
 
 ship = Ship()
 
@@ -105,7 +105,7 @@ for ast in default_asteroids:
     ast.y = randint(-9,9)
 
 
-# HELPERS / SETTINGS
+## HELPERS / SETTINGS
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -144,7 +144,7 @@ acceleration = 3
 
 screenshot_mode = False
 
-# INITIALIZE GAME ENGINE
+## INITIALIZE GAME ENGINE
 
 def main(asteroids=default_asteroids):
 
@@ -157,7 +157,7 @@ def main(asteroids=default_asteroids):
     done = False
     clock = pygame.time.Clock()
 
-    # p key prints screenshot (you can ignore this variable)
+## p key prints screenshot (you can ignore this variable)
     p_pressed = False
 
     while not done:
@@ -168,7 +168,7 @@ def main(asteroids=default_asteroids):
             if event.type == pygame.QUIT: # If user clicked close
                 done=True # Flag that we are done so we exit this loop
 
-        # UPDATE THE GAME STATE
+## UPDATE THE GAME STATE
 
         milliseconds = clock.get_time()
         keys = pygame.key.get_pressed()
@@ -195,7 +195,7 @@ def main(asteroids=default_asteroids):
             ship.vy += ay * milliseconds/1000
 
 
-        # p key saves screenshot (you can ignore this)
+## p key saves screenshot (you can ignore this)
         if keys[pygame.K_p] and screenshot_mode:
             p_pressed = True
         elif p_pressed:
@@ -208,7 +208,7 @@ def main(asteroids=default_asteroids):
 
         laser = ship.laser_segment()
 
-        # DRAW THE SCENE
+## DRAW THE SCENE
 
         screen.fill(WHITE)
 

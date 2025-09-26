@@ -1,15 +1,15 @@
 from vectors import *
 from random import randint
 
-# def multiply_matrix_vector(matrix, vector):
-#     return linear_combination(vector, *zip(*matrix))
+## def multiply_matrix_vector(matrix, vector):
+##     return linear_combination(vector, *zip(*matrix))
 
-# def multiply_matrix_vector(matrix,vector):
-#     return tuple(
-#         sum(vector_entry * matrix_entry
-#             for vector_entry, matrix_entry in zip(row,vector))
-#         for row in matrix
-#     )
+## def multiply_matrix_vector(matrix,vector):
+##     return tuple(
+##         sum(vector_entry * matrix_entry
+##             for vector_entry, matrix_entry in zip(row,vector))
+##         for row in matrix
+##     )
 
 def multiply_matrix_vector(matrix,vector):
     return tuple(

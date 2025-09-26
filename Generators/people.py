@@ -27,9 +27,9 @@ def people_generator(num_people):
                 }
         yield person
 
-# t1 = time.clock()
-# people = people_list(1000000)
-# t2 = time.clock()
+## t1 = time.clock()
+## people = people_list(1000000)
+## t2 = time.clock()
 
 t1 = time.clock()
 people = people_generator(1000000)

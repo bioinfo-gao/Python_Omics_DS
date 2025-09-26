@@ -1,4 +1,4 @@
-# Import a library of functions called 'pygame'
+## Import a library of functions called 'pygame'
 import pygame
 import vectors
 from math import pi, sqrt, cos, sin, atan2
@@ -6,7 +6,7 @@ from random import randint, uniform
 from linear_solver import do_segments_intersect
 import sys
 
-# DEFINE OBJECTS OF THE GAME
+## DEFINE OBJECTS OF THE GAME
 
 class PolygonModel():
     def __init__(self,points):
@@ -65,7 +65,7 @@ class Asteroid(PolygonModel):
         self.vy = 0 # uniform(-1,1)
         self.angular_velocity = uniform(-pi/2,pi/2)
 
-# INITIALIZE GAME STATE
+## INITIALIZE GAME STATE
 
 ship = Ship()
 
@@ -77,7 +77,7 @@ for ast in asteroids:
     ast.y = randint(-9,9)
 
 
-# HELPERS / SETTINGS
+## HELPERS / SETTINGS
 
 BLACK = (  0,   0,   0)
 WHITE = (255, 255, 255)
@@ -99,7 +99,7 @@ def draw_segment(screen, v1,v2,color=RED):
 
 screenshot_mode = False
 
-# INITIALIZE GAME ENGINE
+## INITIALIZE GAME ENGINE
 
 def main():
 
@@ -114,7 +114,7 @@ def main():
     done = False
     clock = pygame.time.Clock()
 
-    # p key prints screenshot (you can ignore this variable)
+## p key prints screenshot (you can ignore this variable)
     p_pressed = False
 
     while not done:
@@ -125,7 +125,7 @@ def main():
             if event.type == pygame.QUIT: # If user clicked close
                 done=True # Flag that we are done so we exit this loop
 
-        # UPDATE THE GAME STATE
+## UPDATE THE GAME STATE
 
         milliseconds = clock.get_time()
         keys = pygame.key.get_pressed()
@@ -141,14 +141,14 @@ def main():
 
         laser = ship.laser_segment()
 
-        # p key saves screenshot (you can ignore this)
+## p key saves screenshot (you can ignore this)
         if keys[pygame.K_p] and screenshot_mode:
             p_pressed = True
         elif p_pressed:
             pygame.image.save(screen, 'figures/asteroid_screenshot_%d.png' % milliseconds)
             p_pressed = False
 
-        # DRAW THE SCENE
+## DRAW THE SCENE
 
         screen.fill(WHITE)
 

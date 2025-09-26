@@ -28,8 +28,8 @@ def load_polygons():
 def triangulate(poly):
     if len(poly) < 3:
         raise ArgumentException("polygons must have at least 3 vertices")
-    # elif len(poly) == 3:
-    #     return [poly]
+## elif len(poly) == 3:
+##     return [poly]
     else:
         for i in range(1,len(poly) - 1):
             yield (poly[0], poly[i+1], poly[i])
@@ -45,10 +45,10 @@ def load_triangles():
             tris.append(tri)
     return tris
 
-#
-# print(len(polys), len(tris))
-# for i in range(2,481):
-#     r = content[i].split()
-#     print (float(r[0]), float(r[1]), float(r[2]))
+##
+## print(len(polys), len(tris))
+## for i in range(2,481):
+##     r = content[i].split()
+##     print (float(r[0]), float(r[1]), float(r[2]))
 
-# vertex_lines = [(float(r[0]), float(r[1]), float(r[2])) for i in range(2,481) for r in content[i].split(" ")]
+## vertex_lines = [(float(r[0]), float(r[1]), float(r[2])) for i in range(2,481) for r in content[i].split(" ")]

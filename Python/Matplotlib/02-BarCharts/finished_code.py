@@ -28,7 +28,7 @@ popularity.reverse()
 plt.barh(languages, popularity)
 
 plt.title("Most Popular Languages")
-# plt.ylabel("Programming Languages")
+## plt.ylabel("Programming Languages")
 plt.xlabel("Number of People Who Use")
 
 plt.tight_layout()

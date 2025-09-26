@@ -67,7 +67,7 @@ def calc_win_amt(my_numbers, winning_numbers):
     return win_amt
 
 
-# for drawing in range(num_drawings):
+## for drawing in range(num_drawings):
 hit_jp = False
 drawings = 0
 years = 0

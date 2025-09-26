@@ -12,7 +12,7 @@ from matplotlib.patches import Circle, Wedge, Polygon
 from matplotlib.collections import PatchCollection
 import matplotlib.pyplot as plt
 
-# Fixing random state for reproducibility
+## Fixing random state for reproducibility
 np.random.seed(20030618)
 
 
@@ -37,7 +37,7 @@ for x1, y1, r, t1, t2 in zip(x, y, radii, theta1, theta2):
     wedge = Wedge((x1, y1), r, t1, t2)
     patches.append(wedge)
 
-# Some limiting conditions on Wedge
+## Some limiting conditions on Wedge
 patches += [
     Wedge((.3, .7), .1, 0, 360),             # Full circle
     Wedge((.7, .8), .2, 0, 360, width=0.05),  # Full ring
@@ -59,17 +59,17 @@ plt.savefig("Chapter 02/patch_collection.svg")
 plt.show()
 
 #############################################################################
-#
-# .. admonition:: References
-#
-#    The use of the following functions, methods, classes and modules is shown
-#    in this example:
-#
-#    - `matplotlib.patches`
-#    - `matplotlib.patches.Circle`
-#    - `matplotlib.patches.Wedge`
-#    - `matplotlib.patches.Polygon`
-#    - `matplotlib.collections.PatchCollection`
-#    - `matplotlib.collections.Collection.set_array`
-#    - `matplotlib.axes.Axes.add_collection`
-#    - `matplotlib.figure.Figure.colorbar`
+##
+## .. admonition:: References
+##
+##    The use of the following functions, methods, classes and modules is shown
+##    in this example:
+##
+##    - `matplotlib.patches`
+##    - `matplotlib.patches.Circle`
+##    - `matplotlib.patches.Wedge`
+##    - `matplotlib.patches.Polygon`
+##    - `matplotlib.collections.PatchCollection`
+##    - `matplotlib.collections.Collection.set_array`
+##    - `matplotlib.axes.Axes.add_collection`
+##    - `matplotlib.figure.Figure.colorbar`

@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import xlim, ylim
 
-# 定义颜色变量
+## 定义颜色变量
 blue = 'C0'
 black = 'k'
 red = 'C3'
@@ -67,7 +67,7 @@ class Segment():
 
 
 def extract_vectors(objects):
-    # helper function to extract all the vectors from a list of objects
+## helper function to extract all the vectors from a list of objects
     for object in objects:
         if type(object) == Polygon:
             for v in object.vertices:
@@ -96,7 +96,7 @@ def draw(*objects, origin=True, axes=True, grid=(1, 1), nice_aspect_ratio=True,
     max_x, max_y, min_x, min_y = max(
         0, *xs), max(0, *ys), min(0, *xs), min(0, *ys)
 
-    # sizing
+## sizing
     if grid:
         x_padding = max(ceil(0.05*(max_x-min_x)), grid[0])
         y_padding = max(ceil(0.05*(max_y-min_y)), grid[1])

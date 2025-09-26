@@ -17,13 +17,13 @@ dates = [
 
 y = [0, 1, 3, 4, 6, 5, 7]
 
-# data = pd.read_csv('data.csv')
-# price_date = data['Date']
-# price_close = data['Close']
+## data = pd.read_csv('data.csv')
+## price_date = data['Date']
+## price_close = data['Close']
 
-# plt.title('Bitcoin Prices')
-# plt.xlabel('Date')
-# plt.ylabel('Closing Price')
+## plt.title('Bitcoin Prices')
+## plt.xlabel('Date')
+## plt.ylabel('Closing Price')
 
 plt.tight_layout()
 

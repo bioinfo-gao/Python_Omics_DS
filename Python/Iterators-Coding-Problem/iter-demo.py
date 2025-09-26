@@ -24,8 +24,8 @@ def sentence(sentence):
 
 my_sentence = sentence('This is a test')
 
-# for word in my_sentence:
-#     print(word)
+## for word in my_sentence:
+##     print(word)
 
 print(next(my_sentence))
 print(next(my_sentence))
@@ -34,8 +34,8 @@ print(next(my_sentence))
 print(next(my_sentence))
 
 
-# This should have the following output:
-# This
-# is
-# a
-# test
+## This should have the following output:
+## This
+## is
+## a
+## test

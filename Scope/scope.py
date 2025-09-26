@@ -8,12 +8,12 @@ for a in range(2):
 
 
 def outer():
-    # x = 'outer x'
+## x = 'outer x'
     for b in range(3):
         x = 'outer {}'.format(b)
 
     def inner():
-        # x = 'inner x'
+## x = 'inner x'
         for c in range(4):
             x = 'inner {}'.format(c)
         print(x)

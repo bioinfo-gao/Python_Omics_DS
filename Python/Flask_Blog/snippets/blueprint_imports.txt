@@ -1,16 +1,16 @@
 
-# main/routes.py
+## main/routes.py
 from flask import render_template, request, Blueprint
 from flaskblog.models import Post
 
 
-# posts/forms.py
+## posts/forms.py
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 
 
-# posts/routes.py
+## posts/routes.py
 from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
@@ -19,7 +19,7 @@ from flaskblog.models import Post
 from flaskblog.posts.forms import PostForm
 
 
-# users/forms.py
+## users/forms.py
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
@@ -28,7 +28,7 @@ from flask_login import current_user
 from flaskblog.models import User
 
 
-# users/routes.py
+## users/routes.py
 from flask import render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from flaskblog import db, bcrypt
@@ -38,7 +38,7 @@ from flaskblog.users.forms import (RegistrationForm, LoginForm, UpdateAccountFor
 from flaskblog.users.utils import save_picture, send_reset_email
 
 
-# users/utils.py
+## users/utils.py
 import os
 import secrets
 from PIL import Image

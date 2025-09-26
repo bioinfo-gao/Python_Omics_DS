@@ -60,6 +60,6 @@ copy1, copy2 = itertools.tee(person_group)
 
 for key, group in person_group:
     print(key, len(list(group)))
-    # for person in group:
-    #     print(person)
-    # print()
+## for person in group:
+##     print(person)
+## print()

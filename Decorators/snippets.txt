@@ -12,7 +12,7 @@ class decorator_class(object):
         self.original_function(*args, **kwargs)
 
 
-# Practical Examples
+## Practical Examples
 
 def my_logger(orig_func):
     import logging

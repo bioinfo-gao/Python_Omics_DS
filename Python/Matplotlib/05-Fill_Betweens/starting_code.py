@@ -12,7 +12,7 @@ plt.plot(ages, dev_salaries, color='#444444',
 
 plt.plot(ages, py_salaries, label='Python')
 
-# overall_median = 57287
+## overall_median = 57287
 
 plt.legend()
 
