@@ -1,0 +1,2 @@
+CHROM,POS,REF,ALT,GT,Gene,Allele,Phenotype,Evidence,Recommendation
+22,42128945,G,A,0/1,CYP2D6,*4,IM,CPIC Level A,"Avoid codeine, adjust tamoxifen dose"
