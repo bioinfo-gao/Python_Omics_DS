@@ -1,0 +1,6 @@
+{
+  "terminal.integrated.env.windows": {
+    "KMP_DUPLICATE_LIB_OK": "TRUE"
+  },
+  "jupyter.runStartupCommands": ["%env KMP_DUPLICATE_LIB_OK=TRUE"]
+}
