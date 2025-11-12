@@ -50,6 +50,8 @@ Ctl + Backspace
 快捷移动cell 向上移动单元格	Alt + Up Arrow (↑)
 快捷移动cell 向下移动单元格	Alt + Down Arrow (↓)
 
+快速回，点击某个cell： Ctrl + Z 
+
 # =====(AA7)===== # check all resource path
 http://localhost:8888/lab/workspaces/auto-p/tree/Documents/Jupyter_DeepL >  jupyter --paths
 config:
