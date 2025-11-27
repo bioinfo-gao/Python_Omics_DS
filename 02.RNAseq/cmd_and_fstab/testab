@@ -1,0 +1,31 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p2 during installation
+UUID=adbca166-e88c-42ce-b306-41e2f4685115 /               ext4    errors=remount-ro 0       1
+# /boot/efi was on /dev/nvme0n1p1 during installation
+UUID=9905-B0FD  /boot/efi       vfat    umask=0077      0       1
+/swapfile                                 none            swap    sw              0       0
+
+# / was on /dev/sda2 during installation
+# 2nd Hard Disk 
+# UUID=4f41e90d-cfe6-44b9-8e21-618f2592f744       /media/2T_Disk  ext4    defaults        0       2
+UUID=79df46d6-96d0-4b12-af12-7cd2eac82baa       /media/code_12T  ext4    defaults        0       2
+UUID=3432c9fb-6ea7-4826-9eb3-14b32b840153       /media/data_12T  ext4    defaults        0       2
+//scccresfs.cgcent.miami.edu/Bioinformatics /media/H_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000,user 0 0
+//scccresfs.cgcent.miami.edu/bioinformatics_2 /media/J_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000,user 0 0
+//scccresfs.cgcent.miami.edu/george_endometrial /media/G_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000,user 0 0
+//sccceqfs.cgcent.miami.edu/BBSR$ /media/I_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000,user 0 0
+#//bbcresfs.ad.med.miami.edu/Bioinformatics$ /media/H_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000,user 0 0
+#//bbcresfs.ad.med.miami.edu/Bioinformatics$ /media/H_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000 0 0
+#//bbcresfs.ad.med.miami.edu/BBC$ /media/I_driver cifs iocharset=utf8,credentials=/home/zxg161/.smbcredentials,uid=1000 0 0
+
+
+
+
+this is just a test to test ZZ (two uppercase ZZ)
+this is another line to test :x
