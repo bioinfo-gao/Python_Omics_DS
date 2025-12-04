@@ -1,7 +1,7 @@
 # https://liaoxuefeng.com/books/git/customize/ignore/index.html
 Python/Pandas/data/
 PyTorch/.vscode/settings.json
-#*.h5
+*.h5
 
 
 # https://github.com/github/gitignore
