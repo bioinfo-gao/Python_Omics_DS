@@ -227,3 +227,12 @@ __marimo__/
 !dataset*/*.h5
 !datasets/*.h5
 !dataset/*.h5
+
+
+
+# =========== 查哪个文件ignore
+# git check-ignore -v 0B.Tools_color_and_R_version/use_git_within_Jupyter.txt
+## then modify the file
+
+# =========== 不修改规，，只强制推送某个文件
+# git add -f 0B.Tools_color_and_R_version/use_git_within_Jupyter.txt
