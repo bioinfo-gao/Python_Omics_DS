@@ -1,0 +1,25 @@
+######################## (1) #################################
+print(f"Model structure: {seq_modules}\n\n") # change model name
+
+for name, param in seq_modules.named_parameters(): # cell 64 change model name
+    print(f"Layer: {name} | Size: {param.size()} | Values : {param[:2]} \n")
+
+######################## (2) #################################
+#print(len(train_dataloader)) ################# 938 
+len(test_dataloader)  ################# 157
+
+######################## (3) #################################
+layer1 = nn.Linear(in_features=28*28, out_features=20)
+hidden1 = layer1(flat_image)
+print(hidden1.size())
+######################## (4) #################################
+print(f"Before ReLU: {hidden1}\n\n")
+hidden1 = nn.ReLU()(hidden1)  ##### ========== WIELD  FORMAT ()
+print(f"After ReLU: {hidden1}")
+
+######################## (5) #################################
+
+    size = len(dataloader.dataset)
+    print(size) ########## 10000
+    num_batches = len(dataloader)
+    print(num_batches) ####### 157

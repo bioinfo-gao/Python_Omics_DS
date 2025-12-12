@@ -1,0 +1,60 @@
+conda remove -n tfgpu --all
+
+conda create -n tfpro tensorflow-probability
+
+conda create -n tfgpu tensorflow-gpu tensorflow-probability jupyter
+
+conda create -n tfgpu tensorflow-gpu=2.3.0 gast=0.3.3 scipy=1.4.1 numpy=1.18.0 tensorflow-estimator=2.3.0 tensorflow-probability=0.8.0
+
+conda create -n tfgpu tensorflow-gpu=2.3.0 gast=0.3.3 scipy=1.4.1 prometeia::numpy tensorflow-estimator=2.3.0 angloyna::tensorflow-probability=0.10.1
+
+
+conda create -n tfgpu tensorflow-gpu=2.2.0 scipy=1.4.1 prometeia::numpy tensorflow-estimator=2.3.0 pyim_candidates::tensorflow-probability
+pip install tensorflow_probability==0.12.2
+
+# numpy 1.18.1        tfpro 0.50
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to https://anaconda.org/
+
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+
+
+
+
+tensorflow 2.3.0 requires gast==0.3.3, but you have gast 0.2.2 which is incompatible.
+Successfully installed cloudpickle-1.1.1 gast-0.2.2 tensorflow_probability-0.8.0
+
+PackagesNotFoundError: The following packages are not available from current channels:
+  - tensorflow_probability=0.9*
+
+ pip install tensorflow_probability==0.9  # tensorflow2.3
+  
+pip install -U tensorflow-probability==0.6.0 downgrade to 0.6.
+
+conda install  tensorflow-probability
+
+conda list # show all packaga and verion inthe curent env
+conda search # show all packages in all env
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    cloudpickle-2.2.1          |     pyhd8ed1ab_0          27 KB  conda-forge
+    dm-tree-0.1.7              |   py37h3182a2c_0         117 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:         144 KB
+
+The following NEW packages will be INSTALLED:
+
+  cloudpickle        conda-forge/noarch::cloudpickle-2.2.1-pyhd8ed1ab_0
+  decorator          conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_0
+  dm-tree            conda-forge/win-64::dm-tree-0.1.7-py37h3182a2c_0
+  tensorflow-probab~ pkgs/main/noarch::tensorflow-probability-0.14.0-pyhd3eb1b0_0
+
+
+Proceed ([y]/n)? y
+
+python -m pip install --upgrade --user "tensorflow<2" "tensorflow_probability<0.9"

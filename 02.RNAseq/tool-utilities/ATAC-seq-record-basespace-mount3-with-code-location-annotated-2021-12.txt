@@ -1,0 +1,327 @@
+=======================01-11==========================
+
+### Note should put in the dir 
+
+cd /data1/ZG/ATACseq/
+##############===========  setp 1 ========###############
+
+cd /data1/ZG/
+
+basemount BaseSpace_ZG  
+# In mostcase Mount 
+point "/data1/ZG/BaseSpace_ZG" is already mounted by BaseMount
+Would you like to unmount it? (Y/n) y    # only and must << reMount>> could get the new project
+
+basemount BaseSpace_ZG
+cd ~/DATA_ZG/BaseSpace_ZG/Projects
+
+cd /data1/ZG/ATACseq/
+mkdir   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+mkdir   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/
+
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-01/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-02/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-03/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-04/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-05/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-06/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-07/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-08/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq/Samples/2020-12-09-Moro-ATAC-Set2-09/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq_5-6/Samples/2020-12-09-Moro-ATAC-5/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/
+cp /data1/ZG/BaseSpace_ZG/Projects/2020-12-09-Alejandro-Moro-ATAC-seq_5-6/Samples/2020-12-09-Moro-ATAC-6/Files/*   /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/
+
+### alternative mehtod 2
+mkdir  /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set1/
+mkdir  /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set3/
+
+#!/bin/bash
+# Define a string variable with a value
+StringVal="
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-01/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-02/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-03/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-04/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-05/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-06/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-07/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-08/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set1-09/Files/*
+"
+
+# Iterate the string variable using for loop
+for val in $StringVal
+do
+    cp $val /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set1/
+done
+
+############
+
+#!/bin/bash
+# Define a string variable with a value
+StringVal="
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-01/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-02/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-03/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-04/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-05/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-06/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-07/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-08/Files/*
+/data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/2021-01-11-Moro-ATAC-Set3-09/Files/*
+"
+
+# Iterate the string variable using for loop
+for val in $StringVal
+do
+    cp $val /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set3/
+done
+
+
+
+### alternative mehtod 3
+cd /data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set1-ATAC-seq/Samples/
+find .  | grep '.fastq$' | xargs -I {} mv {} /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set1/
+
+cd /data1/ZG/BaseSpace_ZG/Projects/2020-01-11-Alejandro-Moro-set3-ATAC-seq/Samples/
+find .  | grep '.fastq$' | xargs -I {} mv {} /data1/ZG/ATACseq/2020-01-11-Alejandro-Moro-ATAC-set3/
+
+find .  | grep '.fastq$' | xargs -I {} mv {} /data1/ZG/ATACseq/Malak_D7_mouse/fastq-DATA
+find $directory -type f -name "*.in"
+find . -type f -name "*.fastq.gz$" ### There are some unknow mistakes
+
+
+##############===========  setp 2 ========###############
+# /media/2T_Disk/Dropbox (BBSR)/Tool-Utility/tools/bash-tools/shorten_file_name.sh
+# rename _001 '' *.gz   .
+# rename _001 '' /data/ZG/ATAC/Encode_ATAC/human_SLE/2019-11-08-Moro-ATAC/Samples/2019-11-08-Moro-ATAC*/Files/*.gz
+ rename _001 '' /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/*.gz  
+ rename _001 '' /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/*.gz  
+
+
+##############===========  setp 3 ========###############
+Rscript /data/ZG/Programs/job/QCwPreprocessing_BBSR.R --indir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/
+Rscript /data/ZG/Programs/job/QCwPreprocessing_BBSR.R --indir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/
+
+##############===========  setp 4 ========###############
+python /data/ZG/Programs/job/QcSum.py /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/QC/                        # the ending / is needed   # =====> note the "QC_summary_output.txt" was reported by this step through python crawer
+python /data/ZG/Programs/job/QcSum.py /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/QC/                        # the ending / is needed   # =====> note the "QC_summary_output.txt" was reported by this step through python crawer
+
+
+conda
+
+cd      /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/QC/
+multiqc /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/QC/
+cd      /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/QC/
+multiqc /data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/QC/
+
+
+
+##############===========  setp 5 ========###############
+# Rscript /data/ZG/Programs/job/NGS_pip_rnaseq_ver.1.5_ZG8.R --indir=~/DATA1_ZG/RNAseq/Pilar_Jie_Li_2020/DATA/Formatted/     # or NGS_pip_rnaseq_ver.1.5_ZG6_for_DATA1.R 
+Rscript /data/ZG/Programs/job/NGS_pip_rnaseq_ver.1.5_ZG8.R --indir=~/DATA1_ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/DATA/Formatted/     # or NGS_pip_rnaseq_ver.1.5_ZG6_for_DATA1.R 
+Rscript /data/ZG/Programs/job/NGS_pip_rnaseq_ver.1.5_ZG8.R --indir=~/DATA1_ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/DATA/Formatted/     # or NGS_pip_rnaseq_ver.1.5_ZG6_for_DATA1.R 
+
+#### 1) should keep the format ~/DATA_ZG, updated 2018-02-20 and 06-10-2019
+#### 2) note the all_samples should be 2 levels lower than the /DATA_ZG, it's important updated 06-10-2019
+#### 3) next time I can put in as  --indir=~/DATA_ZG/RNA-seq/mMalke_RNA_all_samples/DATA/Formatted    updated 06-10-2019
+
+2. no <==paired reads
+4. GRCh38(primary).  # I take both as human       # in fact set 1,2,3 are human,  the set56 is mouse 
+1. STAR	
+1. gene-level
+1. unstranded
+1. none (default)       <======	additional featureCounts parameter:
+1. yes                  <====== Trim raw sequence?:	1. Yes	2. No
+1. NexteraPE-PE.fa      <====== Select adapter file for trimming:
+1. Yes	                <====== Generate BigWig file?:	1. Yes	2. No
+
+# ImportError: No module named HTSeq
+# I installed it with conda
+
+##############===========  setp 6 ========###############
+Rscript /data/ZG/Programs/job/QCreport_finalizer_ZG.R --fastqc_file=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/QC/QC_summary_output.txt  --align_dir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/Alignment/  --count_dir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set2/Count/   ##
+Rscript /data/ZG/Programs/job/QCreport_finalizer_ZG.R --fastqc_file=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/QC/QC_summary_output.txt --align_dir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/Alignment/ --count_dir=/data1/ZG/ATACseq/2020-12-09-Moro-ATAC-Set56/Count/   
+
+#NEEDED or NOT?  it is NEED in the code ZG 2019-10-27
+main_dir = paste(infile_dir_sep[1:(grep("RNA-?seq|ATAC-?seq", infile_dir_sep)+2)], collapse = "/")  # by ZG 2018-02-21 ## RNA-seq updated to RNA-?seq 2020-07-05 for matching the new format in /data1 updatae 2021-01-13 for ATAC
+
+
+##############===========  (OPTIONAL) setp 7 ========###############
+7) download human/mouse genome
+# download hg38 genome
+cd /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/genome
+mkdir /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/test_genome_database/hg38
+./download_genome_data.sh hg38  /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/test_genome_database/hg38
+
+##############===========  setp 8 ========###############
+(II.1) conda activate
+
+(II.2) conda env list
+base                  *  /data/ZG/ATAC/Encode_ATAC/miniconda3
+                         /home/zxg161/miniconda3
+                         /home/zxg161/miniconda3/envs/encode-atac
+                         /home/zxg161/miniconda3/envs/encode-atac-seq-pipeline
+                         /home/zxg161/miniconda3/envs/encode-atac-seq-pipeline-python3
+
+(II.3) conda activate /home/zxg161/miniconda3/envs/encode-atac-seq-pipeline/ # IMPORTANT!
+
+
+
+
+##############===========  setp 8 ========###############
+
+Until 2021-02-03: AS1 AS2 KH1 KH2 have finished sucessfully
+# modify the json file for input data:
+
+/data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/examples/local/AS_samples.json
+/data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/examples/local/KH_samples.json  # tenmp set cpu 20 change it back
+/data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/examples/local/MM_samples.json  # tenmp set cpu 20 change it back
+/data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/examples/local/Collaborator_mouse.json
+                                                            Collaborator_mouse.json
+change 
+
+    "atac.genome_tsv" : "test_genome_database/hg38/hg38.tsv",  #     "atac.idr_thresh" : 0.1,     "atac.trim_adapter.cpu" might be changes 
+    "atac.genome_tsv" : "test_genome_database/mm10/mm10.tsv",  #     "atac.idr_thresh" : 0.1,     "atac.trim_adapter.cpu" might be changes 
+    "atac.title" : "AS_human_IDR_0.1",
+    "atac.description" : "ATAC-seq_AS_human_with IDR 0.1",
+
+change 
+
+    "atac.title" : "human_SLE1_IDR_0.1",                                       ### changed here  according to samples
+    "atac.description" : "ATAC-seq human_SLE1 with IDR 0.1",         ### changed here  according to samples
+
+    "atac.trim_adapter.cpu" : 24,                                    ### changed here, run with 24 cores
+    "atac.bowtie2_cpu" : 24,                                         ### changed here, run with 24 cores
+    "atac.filter_cpu" : 24,                                         ### changed here, run with 24 cores
+    
+##############===========  setp 6 ========###############
+
+/data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/run_ATAC.bash
+/data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/bash-to-run-atac-wdl/bash_for_run_mouse/run_ATAC.bash
+cd /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/
+cat run_2021_human_and_mouse.bash
+bash run_2021_human_and_mouse.bash
+
+##############===========  setp 6 ========###############
+diff atac.wdl atacQ20.wdl 
+63c63
+< 	Int mapq_thresh = 30			# threshold for low MAPQ reads removal
+
+< 	Int mapq_thresh				# threshold for low MAPQ reads removal
+---
+> 	Int mapq_thresh	= 20			# threshold for low MAPQ reads removal  
+
+
+
+##############===========  setp 6 ========###############
+run_2021_human_and_mouse.bash
+    PIPELINE_METADATA=metadata.json
+    INPUT=examples/local/AS_samples.json
+    java -jar -Dconfig.file=backends/backend.conf cromwell-38.jar run atac.wdl -i ${INPUT} -m ${PIPELINE_METADATA}  &> /data1/ZG/scratch/AS_samples_json.txt  & # 08_20
+
+##############===========  setp 6 ========###############
+cd /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline
+bash run_2021_human_and_mouse.bash #for different section
+bash run_2021_human_and_mouse.bash
+bash run_2021_human_and_mouse.bash
+bash run_2021_human_and_mouse.bash
+
+##############===========  setp 6 ========###############
+
+# re run 16 FP 
+INPUT=examples/local/16h_FP_samples.json
+PIPELINE_METADATA=/data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/metadata.json
+java -jar -Dconfig.file=backends/backend.conf cromwell-38.jar run chip.wdl -i ${INPUT} -m ${PIPELINE_METADATA} # the chip.wdl NOT exist
+java -jar -Dconfig.file=backends/backend.conf cromwell-38.jar run atac.wdl -i ${INPUT} -m ${PIPELINE_METADATA}
+
+python resumer.py /data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/metadata.json
+python ./utils/resumer/resumer.py /data/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/metadata.json
+python utils/resumer/resumer.py /data1/ZG/ATAC/Encode_ATAC/atac-seq-pipeline/metadata.json
+
+# for the sample finished successfully 16h IL2 with idr 0.05
+
+#Total 11 h
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 31 01:26 call-qc_report                # 11h       ########### last one, critical
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:44 call-ataqc                    # 7h        ########### critical
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:42 call-reproducibility_idr      # 7h.       ########### critical
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:38 call-reproducibility_overlap
+
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:37 call-idr                    #=====>>>> (Group 4) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:36 call-overlap                #=====>>>> (Group 3) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:36 call-idr_ppr                #=====>>>> (Group 4) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:36 call-overlap_ppr            #=====>>>> (Group 3) no this folder if no repeats
+
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:32 call-idr_pr                 #=====>>>> (Group 4)      
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:31 call-overlap_pr             #=====>>>> (Group 3)
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:29 call-macs2_ppr1                 #=====>>>> (Group 2) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:28 call-macs2_pooled               #=====>>>> (Group 2) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:27 call-macs2_signal_track_pooled  #=====>>>> (Group 2) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:27 call-macs2_ppr2                 #=====>>>> (Group 2) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:27 call-pool_ta_pr1                #=====>>>> (Group 1) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:26 call-pool_ta_pr2                #=====>>>> (Group 1) no this folder if no repeats
+
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:26 call-macs2_pr1            #=====>>>> (Group 2)
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:26 call-macs2_pr2            #=====>>>> (Group 2)
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 21:26 call-pool_ta                    #=====>>>> (Group 1) no this folder if no repeats
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:25 call-spr
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:25 call-macs2_signal_track   #=====>>>> (Group 2)
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:25 call-macs2
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:25 call-xcor
+
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 21:17 call-bam2ta                    # 6.5h
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 19:57 call-filter                    # 5h
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 15:40 call-bowtie2                   # 1h       ########### critical easyly get error       
+drwxrwsr-x. 5 zxg161 chenlab 67 Mar 30 14:53 call-trim_adapter              # 1min
+drwxrwsr-x. 5 zxg161 chenlab 73 Mar 30 14:52 call-read_genome_tsv           # 0h
+
+##############
+http://10.64.183.104:8787/files/DATA_ZG/ATAC/Encode_ATAC/atac-seq-pipeline/cromwell-executions/atac/mouse-before-2019-05-03/0.75h-PBS-05af0e7b-371a-485e-afb1-1008a6f4f130/call-ataqc/shard-1/execution/2017-10-27-04_S3_R1.fastq.trim.merged_qc.html
+##############
+
+
+#Total 18 h
+drwxrwsr-x.  5 zxg161 chenlab   73 Feb  3 20:40 call-qc_report/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 09:28 call-ataqc/
+drwxrwsr-x.  5 zxg161 chenlab   73 Feb  3 09:18 call-reproducibility_idr/
+drwxrwsr-x.  5 zxg161 chenlab   73 Feb  3 09:08 call-reproducibility_overlap/
+
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 09:05 call-idr_pr/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 09:05 call-overlap_pr/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:57 call-macs2_pr2/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:57 call-macs2_pr1/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:53 call-macs2/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:53 call-macs2_signal_track/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:53 call-spr/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:53 call-xcor/
+
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 08:19 call-bam2ta/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 06:03 call-filter/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 03:13 call-bowtie2/
+drwxrwsr-x.  3 zxg161 chenlab   29 Feb  3 02:25 call-trim_adapter/
+drwxrwsr-x.  5 zxg161 chenlab   73 Feb  3 02:25 call-read_genome_tsv/
+
+
+
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+##############===========  setp 6 ========###############
+
+
+results:
+/data1/ZG/ATAC/Encode_ATAC/steps/4kind_diseases_2021/results/Alejandro_2021-03-08/PCA-4-types-diseases-and-all/PCA2D_Malek_all_label_4_types_of_disease_all.pdf
+code
+/data1/ZG/ATAC/ATAC-seq-code/2021Code-human-4-kinds-of-disease/
+
+
+
+
+
