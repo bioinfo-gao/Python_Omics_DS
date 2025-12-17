@@ -200,7 +200,7 @@ def predict(X, y, parameters):
     """
     
     m = X.shape[1]
-    p = np.zeros((1,m), dtype = np.int)
+    p = np.zeros((1,m), dtype = int) # np.int to int 2025 ZG
     
     # Forward propagation
     a3, caches = forward_propagation(X, parameters)
