@@ -117,7 +117,7 @@ if __name__ == "__main__":
         cost = tf.nn.sigmoid_cross_entropy_with_logits(logits=z, labels=y)
         return cost.numpy()
     
-    logits = np.array([0.2, 0.4, 0.7, 0.9])
-    result = cost(logits, np.array([0, 0, 1, 1]))
+    logits = np.array([0.2, 0.4,0 ,0,0.7, 0.9])
+    result = cost(logits, np.array([0, 0,0,1, 1, 1]))
     print("原始代码结果:")
     print(f"cost = {result}")
