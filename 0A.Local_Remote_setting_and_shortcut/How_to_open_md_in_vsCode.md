@@ -1,5 +1,6 @@
 right click the md file ==> open with ==> Markdown Preview Enhanced
 
+另外还有 Markdown PDF 扩展，可以将 md 文件直接导出为 PDF 文件。
 
 Markdown PDF（专注于导出和打印）
 
