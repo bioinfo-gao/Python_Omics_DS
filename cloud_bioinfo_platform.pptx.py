@@ -1,8 +1,17 @@
 from pptx import Presentation
-from pptx.util import Inches
+from pptx.util import Inches, Pt
+from pptx.dml.color import RGBColor
+from pptx.enum.text import PP_ALIGN
 
 # Create a presentation object
 prs = Presentation()
+
+# Function to set background color of slide
+def set_background_color(slide, color):
+    background = slide.background
+    fill = background.fill
+    fill.solid()
+    fill.fore_color.rgb = color
 
 # Slide 1: Title slide
 slide_layout = prs.slide_layouts[0]  # 0 is the layout for title slide
@@ -13,6 +22,9 @@ def add_title_slide(prs, title, subtitle):
     
     title_placeholder.text = title
     subtitle_placeholder.text = subtitle
+    
+    # Set background color to light blue
+    set_background_color(slide, RGBColor(173, 216, 230))
 
 add_title_slide(prs, "Cloud Based Bioinformation Platform构想", "A Vision for Future Bioinformatics")
 
@@ -30,6 +42,9 @@ def add_table_of_contents(prs):
         "3. Functional Modules Detailed Planning\n"
         "4. Conclusion"
     )
+    
+    # Set background color to light blue
+    set_background_color(slide, RGBColor(173, 216, 230))
 
 add_table_of_contents(prs)
 
